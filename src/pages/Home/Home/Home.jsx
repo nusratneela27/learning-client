@@ -6,9 +6,9 @@ import Classes from '../Classes/Classes';
 const Home = () => {
     return (
         <div>
-            {/* <Helmet>
+            <Helmet>
                 <title>e Crft | Home</title>
-            </Helmet> */}
+            </Helmet>
             <Banner></Banner>
             <Classes></Classes>
         </div>
