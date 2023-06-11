@@ -18,9 +18,7 @@ const Navbar = () => {
         {
             user ? <>
                 <li><Link to="/">DashBoard</Link></li>
-                <button onClick={handleLogout} className="btn btn-accent">LogOut</button>
             </> : <>
-                <button className="btn btn-accent"><Link to="/login">Login</Link></button>
             </>
         }
     </>
@@ -47,10 +45,25 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <button className="btn btn-ghost btn-circle">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-                    </button>
-                    <button className="bg-gradient-to-r from-green-500 via-green-400 to-green-300 px-5 py-2 rounded ms-3 font-bold">Search</button>
+                    {
+                        user ? <>
+                            <div
+                                className="tooltip tooltip-bottom"
+                                data-tip={user?.displayName}
+                            >
+                                <label tabIndex={0} className="avatar">
+                                    <div className="w-10 rounded-full mx-2">
+                                        <img src={user?.photoURL} />
+                                    </div>
+                                </label>
+                            </div>
+
+                            <button onClick={handleLogout} className="bg-gradient-to-r from-green-500 via-green-400 to-green-300 px-5 py-2 rounded ms-3 font-bold">LogOut</button>
+                        </> : <>
+                            <button className="bg-gradient-to-r from-green-500 via-green-400 to-green-300 px-5 py-2 rounded ms-3 font-bold"><Link to="/login">Login</Link></button>
+                            <button className="bg-gradient-to-r from-slate-900 via-slate-600 to-slate-200 px-5 py-2 rounded ms-3 font-bold text-white"><Link to="/signup">Register</Link></button>
+                        </>
+                    }
                 </div>
             </div>
         </>
