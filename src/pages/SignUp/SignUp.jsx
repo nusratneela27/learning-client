@@ -1,13 +1,27 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
 import { useForm } from 'react-hook-form';
 import { Helmet } from 'react-helmet-async';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const SignUp = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { createUser } = useContext(AuthContext);
+    const [error, setError] = useState('');
+
     const onSubmit = data => {
-        console.log(data);
+        setError('');
+        if (data.password !== data.confirm) {
+            setError('Your password did not match')
+            return;
+        }
+
+        createUser(data.email, data.password)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+            })
     }
 
     return (
@@ -47,8 +61,15 @@ const SignUp = () => {
                                     <label className="label">
                                         <span className="label-text">Password</span>
                                     </label>
-                                    <input type="password"  {...register("password", { required: true, })} name="password" placeholder="password" className="input input-bordered" />
+                                    <input type="password"  {...register("password", {
+                                        required: true,
+                                        minLength: 6,
+                                        pattern: /(?=.*[A-Z])(?=.*[!@#$&*])/
+                                    })}
+                                        name="password" placeholder="password" className="input input-bordered" />
                                     {errors.password?.type === 'required' && <p className="text-red-600">Password is required</p>}
+                                    {errors.password?.type === 'minLength' && <p className="text-red-600">Password is less than 6 characters</p>}
+                                    {errors.password?.type === 'pattern' && <p className="text-red-600">don't have a capital letter & don't have a special character</p>}
                                 </div>
 
                                 <div className="form-control">
@@ -57,6 +78,7 @@ const SignUp = () => {
                                     </label>
                                     <input type="password"  {...register("confirm", { required: true, })} name="confirm" placeholder="Confirm password" className="input input-bordered" />
                                     {errors.password?.type === 'required' && <p className="text-red-600">Password confirm required</p>}
+                                    <p className="text-red-600">{error}</p>
                                 </div>
                             </div>
 
@@ -90,6 +112,7 @@ const SignUp = () => {
                                 Login
                             </Link>
                         </p>
+
                     </div>
                 </div>
             </div>

@@ -1,14 +1,39 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
-import { FaGoogle } from 'react-icons/fa';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
 import { Helmet } from 'react-helmet-async';
+import { AuthContext } from '../../providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Login = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { signIn } = useContext(AuthContext);
+    const [show, setShow] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || "/";
+
     const onSubmit = data => {
-        console.log(data);
+        signIn(data.email, data.password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                Swal.fire({
+                    title: 'User Login successful',
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp'
+                    }
+                });
+                navigate(from, { replace: true });
+            })
     }
+
+    // A#123456
 
     return (
         <>
@@ -36,7 +61,12 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password"  {...register("password", { required: true, })} name="password" placeholder="password" className="input input-bordered" />
+                                <input type={show ? "text" : "password"}  {...register("password", { required: true, })} name="password" placeholder="password" className="input input-bordered" />
+                                <p onClick={() => setShow(!show)} className='pt-3 text-center'><small>
+                                    {
+                                        show ? <span>Hide Password</span> : <span>Show Password</span>
+                                    }
+                                </small></p>
                                 {errors.password?.type === 'required' && <p className="text-red-600">Password is required</p>}
                             </div>
 

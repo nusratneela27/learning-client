@@ -1,14 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo.png'
+import { AuthContext } from '../../../providers/AuthProvider';
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext)
+
+    const handleLogout = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error))
+    }
     const navOptions = <>
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/">Instructor</Link></li>
-        <li><Link to="/">Classes</Link></li>
-        <li><Link to="/">DashBoard</Link></li>
-        <li><Link to="/login">Login</Link></li>
+        <li><Link to="/instructor">Instructor</Link></li>
+        <li><Link to="/classes">Classes</Link></li>
+        {
+            user ? <>
+                <li><Link to="/">DashBoard</Link></li>
+                <button onClick={handleLogout} className="btn btn-accent">LogOut</button>
+            </> : <>
+                <button className="btn btn-accent"><Link to="/login">Login</Link></button>
+            </>
+        }
     </>
 
     return (
@@ -36,9 +50,7 @@ const Navbar = () => {
                     <button className="btn btn-ghost btn-circle">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                     </button>
-                    <Link to='/signup'>
-                        <button className="bg-gradient-to-r from-green-500 via-green-400 to-green-300 px-5 py-2 rounded ms-3 font-bold">Register Now</button>
-                    </Link>
+                    <button className="bg-gradient-to-r from-green-500 via-green-400 to-green-300 px-5 py-2 rounded ms-3 font-bold">Search</button>
                 </div>
             </div>
         </>
