@@ -5,7 +5,7 @@
         "instructor": "Adam Riky",
         "seats": "10",
         "studentEnroll": 12,
-        "price": "100"
+        "price": 100
     },
     {
         "image": "https://i.postimg.cc/C5JWwXKg/german.png",
@@ -13,7 +13,7 @@
         "instructor": "David Garza",
         "seats": "14",
         "studentEnroll": 10,
-        "price": "100"
+        "price": 100
     },
     {
         "image": "https://i.postimg.cc/8PKq323d/korean-flag.png",
@@ -21,7 +21,7 @@
         "instructor": "Park min ho",
         "seats": "7",
         "studentEnroll": 17,
-        "price": "100"
+        "price": 100
     },
     {
         "image": "https://i.postimg.cc/nccy3Fdc/spanish.png",
@@ -29,7 +29,7 @@
         "instructor": "John Fox",
         "seats": "9",
         "studentEnroll": 9,
-        "price": "100"
+        "price": 100
     },
     {
         "image": "https://i.postimg.cc/vZCC8WGc/japan.png",
@@ -37,7 +37,7 @@
         "instructor": "Robert Garza",
         "seats": "14",
         "studentEnroll": 7,
-        "price": "100"
+        "price": 100
     },
     {
         "image": "https://i.postimg.cc/L8JrMyKc/turkish.png",
@@ -45,7 +45,7 @@
         "instructor": "David Riky",
         "seats": "12",
         "studentEnroll": 5,
-        "price": "100"
+        "price": 100
     },
     {
         "image": "https://i.postimg.cc/YSq1KSjQ/freanch.png",
@@ -53,6 +53,6 @@
         "instructor": "David",
         "seats": "6",
         "studentEnroll": 5,
-        "price": "100"
+        "price": 100
     }
 ]

@@ -9,3 +9,13 @@
   background-size: cover;
   height: 100vh;
 }
+
+.drawer-side a.active {
+  background-color: white;
+  color: black;
+}
+
+.drawer-side a {
+  background-color: transparent;
+  color: white;
+}

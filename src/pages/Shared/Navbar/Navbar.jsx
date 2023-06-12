@@ -20,7 +20,7 @@ const Navbar = () => {
         <li><Link to="/classes">Classes</Link></li>
         {
             user ? <>
-                <li><Link to="/">DashBoard</Link></li>
+                <li><Link to="/dashboard/mycart">DashBoard</Link></li>
                 <button className='flex mt-3'>
                     <FaCartPlus></FaCartPlus> +{cart?.length || 0}
                 </button>
