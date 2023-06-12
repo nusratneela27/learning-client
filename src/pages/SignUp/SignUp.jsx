@@ -21,20 +21,35 @@ const SignUp = () => {
 
         createUser(data.email, data.password)
             .then(result => {
+
                 const loggedUser = result.user;
                 console.log(loggedUser);
+
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
-                        console.log('update');
-                        reset();
-                        Swal.fire({
-                            position: 'top-end',
-                            icon: 'success',
-                            title: 'User created Successfully',
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
-                        navigate('/');
+                        const saveUser = { name: data.name, img: data.photoURL, email: data.email }
+                        fetch('http://localhost:5000/users', {
+                            method: "POST",
+                            headers: {
+                                "content-type": "application/json"
+                            },
+                            body: JSON.stringify(saveUser)
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.insertedId) {
+                                    reset();
+                                    Swal.fire({
+                                        position: 'top-end',
+                                        icon: 'success',
+                                        title: 'User created Successfully',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+                                    navigate('/');
+                                }
+                            })
+
                     })
                     .catch(error => console.log(error))
             })
@@ -110,16 +125,6 @@ const SignUp = () => {
                                 <input className="btn btn-neutral" type="submit" value="Register" />
                             </div>
                         </form>
-
-                        {/* <div className='flex items-center pt-4 space-x-1 ps-4 pe-4'>
-                            <div className='flex-1 h-px sm:w-16 dark:bg-gray-700'></div>
-                            <p className='px-3 text-sm dark:text-gray-950'>Login with social accounts</p>
-                            <div className='flex-1 h-px sm:w-16 dark:bg-gray-700'></div>
-                        </div>
-                        <div className='flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer'>
-                            <FaGoogle size={25} />
-                            <p>Continue with Google</p>
-                        </div> */}
 
                         <SocialLogin></SocialLogin>
 
