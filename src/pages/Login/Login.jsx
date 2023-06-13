@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2';
 import SocialLogin from '../Shared/SocialLogin/SocialLogin';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Login = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -61,9 +62,9 @@ const Login = () => {
                                     <span className="label-text">Password</span>
                                 </label>
                                 <input type={show ? "text" : "password"}  {...register("password", { required: true, })} name="password" placeholder="password" className="input input-bordered" />
-                                <p onClick={() => setShow(!show)} className='pt-3 text-center'><small>
+                                <p onClick={() => setShow(!show)} className='text-2xl absolute top-60 pe-5 right-5'><small>
                                     {
-                                        show ? <span>Hide Password</span> : <span>Show Password</span>
+                                        show ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
                                     }
                                 </small></p>
                                 {errors.password?.type === 'required' && <p className="text-red-600">Password is required</p>}

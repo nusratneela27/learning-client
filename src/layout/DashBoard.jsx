@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaBook, FaHome, FaUserFriends, FaUserGraduate, FaUsers } from 'react-icons/fa';
+import { FaBook, FaHome, FaUserFriends, FaUserGraduate, FaUsers, FaWallet } from 'react-icons/fa';
 import { NavLink, Outlet } from 'react-router-dom';
 import Navbar from '../pages/Shared/Navbar/Navbar';
 import { Helmet } from 'react-helmet-async';
@@ -49,6 +49,7 @@ const DashBoard = () => {
                             !isAdmin && !isInstructor ? <>
                                 <li><NavLink to="/dashboard/mycart"><FaBook></FaBook>My Selected Classes</NavLink></li>
                                 <li><NavLink to="/dashboard/enrollclass"><FaUsers></FaUsers> My Enrolled Classes</NavLink></li>
+                                <li><NavLink to='/dashboard/payment'><FaWallet /> Payment</NavLink></li>
                             </> : <>
                             </>
                         }

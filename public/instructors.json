@@ -1,0 +1,32 @@
+[
+    {
+        "img": "https://i.postimg.cc/YCdQFv2X/teachers-img-1.jpg",
+        "instructorName": "John Doe",
+        "instructorEmail": "johndoe@example.com"
+    },
+    {
+        "img": "https://i.postimg.cc/DygGVSG2/teachers-img-2.jpg",
+        "instructorName": "John Doe",
+        "instructorEmail": "johndoe@example.com"
+    },
+    {
+        "img": "https://i.postimg.cc/XYYCnnK9/teachers-img-3.jpg",
+        "instructorName": "John Doe",
+        "instructorEmail": "johndoe@example.com"
+    },
+    {
+        "img": "https://i.postimg.cc/GhrDSFH7/teachers-img-4.jpg",
+        "instructorName": "John Doe",
+        "instructorEmail": "johndoe@example.com"
+    },
+    {
+        "img": "https://i.postimg.cc/R0qKLvNv/teachers-img-5.jpg",
+        "instructorName": "John Doe",
+        "instructorEmail": "johndoe@example.com"
+    },
+    {
+        "img": "https://i.postimg.cc/0N3mthwD/teachers-img-6.jpg",
+        "instructorName": "John Doe",
+        "instructorEmail": "johndoe@example.com"
+    }
+]
