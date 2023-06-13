@@ -37,17 +37,18 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'classes',
-                element: <PrivateRoute><Classes></Classes></PrivateRoute>
+                element: <Classes></Classes>
             },
             {
                 path: 'instructor',
-                element: <PrivateRoute><AllInstructors></AllInstructors></PrivateRoute>
+                element: <AllInstructors></AllInstructors>
             }
         ]
     },
     {
         path: "dashboard",
         element: <PrivateRoute><DashBoard></DashBoard></PrivateRoute>,
+        errorElement: <Error></Error>,
         children: [
             // Students Routes
             {

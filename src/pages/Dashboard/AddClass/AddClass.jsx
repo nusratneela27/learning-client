@@ -10,6 +10,7 @@ const AddClass = () => {
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = data => {
+        data.status = "pending"
 
         fetch("http://localhost:5000/class", {
             method: "POST",
@@ -41,7 +42,7 @@ const AddClass = () => {
                 heading={"Add a class"}
                 subheading={"New Class"}
             ></SectionTitle>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)} className='bg-slate-300 p-20 rounded-lg'>
                 <div className="form-control w-full mb-4">
                     <label className="label">
                         <span className="label-text font-semibold">Class Name</span>
@@ -91,6 +92,15 @@ const AddClass = () => {
                         {...register("image", { required: true })}
                         className="input input-bordered w-full " />
                 </div>
+
+
+                <select defaultValue='pending' className="text-input" {...register("status", { required: true })}>
+                    <option value="pending">pending</option>
+                    <option value="approved">approved</option>
+                    <option value="denied">denied</option>
+                </select>
+
+
                 <input className="btn btn-sm mt-4" type="submit" value="Add Item" />
             </form>
         </div>

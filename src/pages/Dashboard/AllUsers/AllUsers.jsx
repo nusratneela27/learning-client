@@ -53,7 +53,7 @@ const AllUsers = () => {
     return (
         <div className="w-full max-w-screen-xl mx-auto">
             <Helmet>
-                <title>Bistro Boss | All Students</title>
+                <title>e Crft | All Students</title>
             </Helmet>
             <h3 className="text-3xl font-semibold my-4">Total Students {users.length}</h3>
             <div className="overflow-x-auto">
