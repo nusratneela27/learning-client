@@ -46,7 +46,7 @@ const ManageClass = () => {
 
             <div className="overflow-x-auto w-full">
                 <table className="table w-full ">
-                    {/* head */}
+
                     <thead className='bg-sky-800 text-white'>
                         <tr>
                             <th>#</th>
