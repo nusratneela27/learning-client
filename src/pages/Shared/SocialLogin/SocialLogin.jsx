@@ -15,7 +15,6 @@ const SocialLogin = () => {
         googleSign()
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser);
 
                 const saveUser = { name: loggedUser.displayName, img: loggedUser.photoURL, email: loggedUser.email }
                 fetch('http://localhost:5000/users', {

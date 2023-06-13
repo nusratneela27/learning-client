@@ -1,12 +1,14 @@
 import React from 'react';
-import { FaAddressCard, FaBook, FaHome, FaUserFriends, FaUserGraduate, FaUsers } from 'react-icons/fa';
+import { FaBook, FaHome, FaUserFriends, FaUserGraduate, FaUsers } from 'react-icons/fa';
 import { NavLink, Outlet } from 'react-router-dom';
 import Navbar from '../pages/Shared/Navbar/Navbar';
 import { Helmet } from 'react-helmet-async';
+import useAdmin from '../hooks/useAdmin';
+import useInstructor from '../hooks/useInstructor';
 
 const DashBoard = () => {
-    const isAdmin = false;
-    const isInstructor = false;
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
 
     return (
         <div>
@@ -38,7 +40,7 @@ const DashBoard = () => {
                         {
                             isInstructor ? <>
                                 <li><NavLink to="/dashboard/addclass"><FaBook></FaBook>Add a Class</NavLink></li>
-                                <li><NavLink to="/dashboard/allusers"><FaUsers></FaUsers> My Classes</NavLink></li>
+                                <li><NavLink to="/dashboard/instructorclass"><FaUsers></FaUsers> My Classes</NavLink></li>
                             </> : <>
                             </>
                         }
@@ -46,7 +48,7 @@ const DashBoard = () => {
                         {
                             !isAdmin && !isInstructor ? <>
                                 <li><NavLink to="/dashboard/mycart"><FaBook></FaBook>My Selected Classes</NavLink></li>
-                                <li><NavLink to="/dashboard/allusers"><FaUsers></FaUsers> My Enrolled Classes</NavLink></li>
+                                <li><NavLink to="/dashboard/enrollclass"><FaUsers></FaUsers> My Enrolled Classes</NavLink></li>
                             </> : <>
                             </>
                         }
