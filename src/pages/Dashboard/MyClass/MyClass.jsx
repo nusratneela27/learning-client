@@ -8,7 +8,6 @@ const MyClass = () => {
     const [myClass, setMyClass] = useState([]);
 
     const url = `http://localhost:5000/class?email=${user?.email}`
-    console.log(user);
 
     useEffect(() => {
         fetch(url)
@@ -29,9 +28,10 @@ const MyClass = () => {
                         <tr>
                             <th>#</th>
                             <th>Images</th>
-                            <th>Class Name</th>
+                            <th>Instructor</th>
                             <th>Email</th>
                             <th>Price</th>
+                            <th>Status</th>
                             <th className='text-end'>Updated</th>
                         </tr>
                     </thead>
@@ -57,6 +57,9 @@ const MyClass = () => {
                                     {item.instructorEmail}
                                 </td>
                                 <td className="">${item.price}</td>
+                                <td>
+                                    {item.status}
+                                </td>
                                 <td className='text-end'>
                                     <button onClick={() => handleDelete(item)} className="btn btn-ghost bg-sky-800 text-white"><FaPencilAlt></FaPencilAlt></button>
                                 </td>

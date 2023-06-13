@@ -28,12 +28,12 @@ const MeetOurClient = () => {
                     <div className="relative py-24">
 
 
-                        <div className="z-10 absolute top-52 md:-left-10 w-3/4">
+                        <div className=" z-10 absolute top-52 md:-left-10 w-3/4">
                             <div className="bg-white rounded-lg flex relative h-60 items-center text-black px-5">
                                 <div>
                                     <p className="mb-3">When it comes to learning new languages, Crtf presents unique challenges and rewards. We've vetted the top sites to help anyone who wants to learn get started.</p>
                                     <h4 className="font-bold mb-2">Adam Smith</h4>
-                                    <small>Student of English club</small>
+                                    <small>Student of English clubs</small>
                                 </div>
                             </div>
                         </div>
@@ -44,7 +44,6 @@ const MeetOurClient = () => {
                                 className="relative bg-white h-56 rounded-lg text-black flex px-5 items-center"
                             >
                                 <div className="absolute -top-5 -left-5">
-                                    <img src="./images/client.png" alt="" />
                                 </div>
                                 <div>
                                     <p className="mb-5">
@@ -62,7 +61,6 @@ const MeetOurClient = () => {
                                 className="relative bg-white h-56 rounded-lg text-black flex px-5 items-center"
                             >
                                 <div className="absolute -top-5 -left-5">
-                                    <img src="./images/client.png" alt="" />
                                 </div>
                                 <div>
                                     <p className="mb-5">

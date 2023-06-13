@@ -10,6 +10,7 @@ const AddClass = () => {
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = data => {
+        data.status = "pending"
 
         fetch("http://localhost:5000/class", {
             method: "POST",
