@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import useAuth from '../../../hooks/useAuth';
 import { FaPencilAlt } from 'react-icons/fa';
 import { Helmet } from 'react-helmet-async';
-import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 
 const MyClass = () => {
     const { user } = useAuth();
@@ -22,10 +21,6 @@ const MyClass = () => {
             <Helmet>
                 <title>e Crft | My Class</title>
             </Helmet>
-            <SectionTitle
-                heading={"My Classes"}
-                subheading={"All My Classes"}
-            ></SectionTitle>
 
             <div className="overflow-x-auto">
                 <table className="table w-full mt-5 px-8">

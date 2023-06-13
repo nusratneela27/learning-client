@@ -23,20 +23,22 @@ const MeetOurClient = () => {
                             <button className="btn btn-outline btn-access border-0 border-b-4 bg-gradient-to-r from-slate-500 via-slate-400 to-amber-100 mt-4 text-black">See All</button>
                         </div>
                     </div>
-                    {/* <!-- boys --> */}
+
+
                     <div className="relative py-24">
-                        {/* <!-- 1st --> */}
+
+
                         <div className="z-10 absolute top-52 md:-left-10 w-3/4">
                             <div className="bg-white rounded-lg flex relative h-60 items-center text-black px-5">
                                 <div>
-                                    <p className="mb-3">We are providing the best and suitable home insurance services
-                                        for the people who are interested to treatment</p>
+                                    <p className="mb-3">When it comes to learning new languages, Crtf presents unique challenges and rewards. We've vetted the top sites to help anyone who wants to learn get started.</p>
                                     <h4 className="font-bold mb-2">Adam Smith</h4>
                                     <small>Student of English club</small>
                                 </div>
                             </div>
                         </div>
-                        {/* <!-- 2nd --> */}
+
+
                         <div className="relative left-20 md:left-32 opacity-40 w-3/4">
                             <div
                                 className="relative bg-white h-56 rounded-lg text-black flex px-5 items-center"
@@ -46,15 +48,15 @@ const MeetOurClient = () => {
                                 </div>
                                 <div>
                                     <p className="mb-5">
-                                        We are providing the best and suitable home insurance services
-                                        for the people who are interested to treatment
+                                        When it comes to learning new languages, Crtf presents unique challenges and rewards. We've vetted the top sites to help anyone who wants to learn get started.
                                     </p>
                                     <h4 className="font-bold">Adam Smith</h4>
                                     <small>Student of English club</small>
                                 </div>
                             </div>
                         </div>
-                        {/* <!-- 3rd --> */}
+
+
                         <div className="relative left-20 md:left-32 top-10 opacity-40 w-3/4">
                             <div
                                 className="relative bg-white h-56 rounded-lg text-black flex px-5 items-center"
@@ -64,8 +66,7 @@ const MeetOurClient = () => {
                                 </div>
                                 <div>
                                     <p className="mb-5">
-                                        We are providing the best and suitable home insurance services
-                                        for the people who are interested to treatment
+                                        When it comes to learning new languages, Crtf presents unique challenges and rewards. We've vetted the top sites to help anyone who wants to learn get started.
                                     </p>
 
                                     <h4 className="font-bold">Adam Smith</h4>

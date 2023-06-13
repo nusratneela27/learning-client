@@ -27,10 +27,11 @@ const DashBoard = () => {
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 h-full bg-sky-800 font-bold text-xl pt-64 mx-auto">
+                    <ul className="menu p-4 w-80 h-full bg-sky-800 font-bold text-xl pt-60 mx-auto">
 
                         {
                             isAdmin ? <>
+                                <li className='text-center text-2xl bg-cyan-200 rounded-3xl  py-5 mb-20'>Admin Dashboard</li>
                                 <li><NavLink to="/dashboard/manageclass"><FaBook></FaBook>Manage Classes</NavLink></li>
                                 <li><NavLink to="/dashboard/allusers"><FaUsers></FaUsers> Manage Users</NavLink></li>
                             </> : <>
@@ -39,6 +40,7 @@ const DashBoard = () => {
 
                         {
                             isInstructor ? <>
+                                <li className='text-center text-2xl bg-cyan-200 rounded-3xl  py-5 mb-20'>Instructor Dashboard</li>
                                 <li><NavLink to="/dashboard/addclass"><FaBook></FaBook>Add a Class</NavLink></li>
                                 <li><NavLink to="/dashboard/instructorclass"><FaUsers></FaUsers> My Classes</NavLink></li>
                             </> : <>
@@ -47,6 +49,7 @@ const DashBoard = () => {
 
                         {
                             !isAdmin && !isInstructor ? <>
+                                <li className='text-center text-2xl bg-cyan-200 rounded-3xl  py-5 mb-20'>Student Dashboard</li>
                                 <li><NavLink to="/dashboard/mycart"><FaBook></FaBook>My Selected Classes</NavLink></li>
                                 <li><NavLink to="/dashboard/enrollclass"><FaUsers></FaUsers> My Enrolled Classes</NavLink></li>
                                 <li><NavLink to='/dashboard/payment'><FaWallet /> Payment</NavLink></li>

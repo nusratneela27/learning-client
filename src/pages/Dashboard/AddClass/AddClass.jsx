@@ -10,7 +10,6 @@ const AddClass = () => {
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = data => {
-        data.status = "pending"
 
         fetch("http://localhost:5000/class", {
             method: "POST",
@@ -94,11 +93,11 @@ const AddClass = () => {
                 </div>
 
 
-                <select defaultValue='pending' className="text-input" {...register("status", { required: true })}>
+                {/* <select defaultValue='pending' className="text-input" {...register("status", { required: true })}>
                     <option value="pending">pending</option>
                     <option value="approved">approved</option>
                     <option value="denied">denied</option>
-                </select>
+                </select> */}
 
 
                 <input className="btn btn-sm mt-4" type="submit" value="Add Item" />
