@@ -11,7 +11,6 @@ const ClassesCard = ({ courses }) => {
     const navigate = useNavigate();
 
     const handleSelectClass = courses => {
-        console.log(courses);
         if (user && user.email) {
             const cartItem = { courseId: _id, image, course, price, instructor, email: user.email }
             fetch('http://localhost:5000/carts', {
