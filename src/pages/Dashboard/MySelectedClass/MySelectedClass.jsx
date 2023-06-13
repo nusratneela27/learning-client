@@ -2,7 +2,6 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import useCart from '../../../hooks/useCart';
 import { FaTrashAlt } from 'react-icons/fa';
-import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import Swal from 'sweetalert2';
 
 const MySelectedClass = () => {
@@ -29,7 +28,7 @@ const MySelectedClass = () => {
                             refetch();
                             Swal.fire(
                                 'Deleted!',
-                                'Your file has been deleted.',
+                                'Your course has been deleted.',
                                 'success'
                             )
                         }

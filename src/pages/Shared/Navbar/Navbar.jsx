@@ -1,13 +1,16 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo.png'
 import { AuthContext } from '../../../providers/AuthProvider';
-import { FaCartPlus } from 'react-icons/fa';
+import { FaCartPlus, FaMoon, FaRegMoon } from 'react-icons/fa';
 import useCart from '../../../hooks/useCart';
+import useDark from '../../../hooks/DarkMood';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext)
     const [cart] = useCart();
+    const [isDark, setIsDark] = useState();
+    useDark(isDark);
 
     const handleLogout = () => {
         logOut()
@@ -51,6 +54,11 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
+
+                    <button className='px-8'>
+                        {isDark ? <FaMoon className="cursor-pointer text-2xl" onClick={() => setIsDark(false)} /> : <FaRegMoon className="cursor-pointer text-2xl" onClick={() => setIsDark(true)} />}
+                    </button>
+
                     {
                         user ? <>
                             <div
