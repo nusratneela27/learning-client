@@ -12,7 +12,7 @@ const AddClass = () => {
     const onSubmit = data => {
         data.status = "pending"
 
-        fetch("http://localhost:5000/class", {
+        fetch("https://learning-camp-server-five.vercel.app/class", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data),
