@@ -15,7 +15,7 @@ const AllInstructors = () => {
     return (
         <div className="w-full max-w-screen-xl mx-auto pt-48 pb-16">
             <Helmet>
-                <title>e Crft| Instructors</title>
+                <title>e Crft| All Instructors</title>
             </Helmet>
             <div>
                 <div className="overflow-x-auto">

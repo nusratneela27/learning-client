@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import Classes from '../Classes/Classes';
 import MeetOurClient from '../MeetOurClient/MeetOurClient';
 import Instructors from '../Instructors/Instructors';
+import ExtraSection from '../ExtraSection/ExtraSection';
 
 const Home = () => {
     return (
@@ -13,7 +14,7 @@ const Home = () => {
             </Helmet>
             <Banner></Banner>
             <Classes></Classes>
-            <MeetOurClient></MeetOurClient>
+            <ExtraSection></ExtraSection>
             <Instructors></Instructors>
         </div>
     );

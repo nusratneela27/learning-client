@@ -41,7 +41,7 @@ const MySelectedClass = () => {
     return (
         <div className="w-full max-w-screen-xl mx-auto">
             <Helmet>
-                <title>e Crft | My class</title>
+                <title>e Crft | My Selected class</title>
             </Helmet>
 
             <div className="uppercase h-[60px] font-semibold flex justify-evenly items-center">

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useAuth from '../../../hooks/useAuth';
+import { Helmet } from 'react-helmet-async';
 
 const EnrollClass = () => {
     const { user } = useAuth();
@@ -15,6 +16,9 @@ const EnrollClass = () => {
 
     return (
         <div className='w-full max-w-screen-xl mx-auto'>
+            <Helmet>
+                <title>e Crft | My Enroll Class</title>
+            </Helmet>
             <div className="overflow-x-auto w-full px-20">
                 <table className="table w-full mt-12 px-8">
                     {/* head */}
