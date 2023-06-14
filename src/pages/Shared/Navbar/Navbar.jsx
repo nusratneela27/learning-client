@@ -75,7 +75,7 @@ const Navbar = () => {
                             <button onClick={handleLogout} className="bg-gradient-to-r from-green-500 via-green-400 to-green-300 px-5 py-2 rounded ms-3 font-bold">LogOut</button>
                         </> : <>
                             <button className="bg-gradient-to-r from-green-500 via-green-400 to-green-300 px-5 py-2 rounded ms-3 font-bold"><Link to="/login">Login</Link></button>
-                            <button className="bg-gradient-to-r from-slate-900 via-slate-600 to-slate-200 px-5 py-2 rounded ms-3 font-bold text-white"><Link to="/signup">Register</Link></button>
+                            {/* <button className="bg-gradient-to-r from-slate-900 via-slate-600 to-slate-200 px-5 py-2 rounded ms-3 font-bold text-white"><Link to="/signup">Register</Link></button> */}
                         </>
                     }
                 </div>

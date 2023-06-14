@@ -81,7 +81,7 @@ const CheckoutForm = ({ cart, price }) => {
                 quantity: cart.length,
                 cartItems: cart.map(item => item._id),
                 classItems: cart.map(item => item.classItemId),
-                status: 'Pending',
+                status: 'pending',
                 itemNames: cart.map(item => item.name)
             }
             axiosSecure.post('/payments', payment)
@@ -120,7 +120,7 @@ const CheckoutForm = ({ cart, price }) => {
                     }}
                 />
                 <div className='pey mt-5'>
-                    <button className='bg-[#2f6661]' type="submit" disabled={!stripe}>
+                    <button className='bg-[#2f6661] btn' type="submit" disabled={!stripe}>
                         Pay
                     </button>
                 </div>

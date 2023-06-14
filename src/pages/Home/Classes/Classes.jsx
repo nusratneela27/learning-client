@@ -17,7 +17,7 @@ const Classes = () => {
                 heading={"Our Popular Courses"}
                 subheading={"only the best"}
             ></SectionTitle>
-            <div className="container mx-auto ps-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
+            <div className="grid gird-cols-1 lg:grid-cols-3 gap-5 px-16 md:px-40 mb-16">
                 {
                     classes.map(courses => <ClassesCard
                         key={courses._id}

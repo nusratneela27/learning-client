@@ -51,7 +51,7 @@ const ClassesCard = ({ courses }) => {
     }
 
     return (
-        <div className="card w-80 h-auto bg-base-100 shadow-xl">
+        <div className="card card-compact w-full bg-base-100 shadow-xl">
             <figure className="pt-2">
                 <img src={image} className="rounded-xl " />
             </figure>
